@@ -41,7 +41,7 @@ def ejercicio_e():
             print("la edad no puede ser un numero negativo")
             continue
 
-        if (peso > 40.0) and (altura > 1.30) and ( 11 < edad and edad < 16):
+        if (peso > 40.0) and (altura > 1.30) and (edad >= 11 and edad <= 16):
             cumple += 1
 
         i += 1

@@ -7,15 +7,18 @@ def ejercicio_a():
     print(f"\nel valor de {numero} * {multiplicador} es: {total}")
 
 def ejercicio_b():
-    inicio, final = [int(x) for x in input("\nIngrese el inicio y el final separados por espacios: ").split()]
+    inicio = int(input("ingrese el inicio de la sequencia: "))
+    final = int(input("Ingrese el final de sequencia: "))
     print([*range(inicio+1, final)])
 
 def ejercicio_c():
-    inicio, final = [int(x) for x in input("\nIngrese el inicio y el final separados por espacios: ").split()]
+    inicio = int(input("ingrese el inicio de la sequencia: "))
+    final = int(input("Ingrese el final de sequencia: "))
     print([*range(final-1, inicio, -1)])
 
 def ejercicio_d():
-    inicio, final = [int(x) for x in input("\nIngrese el inicio y el final separados por espacios: ").split()]
+    inicio = int(input("ingrese el inicio de la sequencia: "))
+    final = int(input("Ingrese el final de sequencia: "))
     if inicio > final:
         print([*range(final+1, inicio)])
     else:

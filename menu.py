@@ -22,7 +22,7 @@ def ejercicio_d():
         print([*range(final-1, inicio, -1)])
 
 def ejercicio_e():
-    pesados, altos, entre, i = 0, 0, 0, 1 
+    cumple, i =  0, 1 
     grupo = int(input("\ningrese la cantidad de niños a analizar: "))
 
     while i <= grupo:
@@ -41,20 +41,12 @@ def ejercicio_e():
             print("la edad no puede ser un numero negativo")
             continue
 
-        if peso > 40.0:
-            pesados += 1
-
-        if altura > 1.30:
-            altos += 1
-
-        if edad > 11 and edad < 16:
-            entre += 1
+        if (peso > 40.0) and (altura > 1.30) and ( 11 < edad and edad < 16):
+            cumple += 1
 
         i += 1
 
-    print(f"\nel porcentaje de niños entre 11 y 16 años es: {entre * 100 / grupo}%")
-    print(f"\nel porcentaje de niños que mides mas de 1.30 es {altos * 100 / grupo}%")
-    print(f"\nel porcentaje de niños que pesan mas de 40kg es {pesados * 100 / grupo}%")
+    print(f"\n el porcentaje niños que tiene entre 11 y 16 años y miden mas de 1.30 y pesan mas de 40kg es {cumple * 100 / grupo}")
 
 def menu():
     while True:

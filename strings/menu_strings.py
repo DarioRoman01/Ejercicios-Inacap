@@ -62,20 +62,18 @@ def menu():
             es_vocal(caracter)
             input("\npresione enter para continuar ")
             continue
-
+        
+        cadena = input("\n Ingrese una cadena de texto: ")
         if opcion == 2:
             contar_consonantes()
             input("\npresione enter para continuar ")
         elif opcion == 3:
-            cadena = input("\n Ingrese una cadena de texto: ")
             separar(cadena)
             input("\npresione enter para continuar ")
         elif opcion == 4:
-            cadena = input("\n Ingrese una cadena de texto: ")
             es_palindromo(cadena)
             input("\npresione enter para continuar ")
         elif opcion == 5:
-            cadena = input("\n Ingrese una cadena de texto: ")
             cambiar_letra(cadena)
             input("\npresione enter para continuar ")
         elif opcion == 6:

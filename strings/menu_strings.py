@@ -8,24 +8,13 @@ def contar_consonantes():
         cadena = input("\nIngrese una cadena de texto: ")
         if cadena == "FIN":
             break
-        
-        consonantes = 0
-        for caracter in cadena:
-            if caracter not in vocales and caracter != " ":
-                consonantes += 1
-        
-        print(f"\nel numero de consonantes es {consonantes}")
+        consonantes = [x for x in cadena if x not in vocales and x != " "]
+        print(f"\nel numero de consonantes es {len(consonantes)}")
 
-
-def separar(cadena: str):
+def separar(cadena):
     vocales = ["a", "e", "i", "o", "u"]
-    texto_vocales, texto_consonantes  = '', ''
-    for caracter in cadena:
-        if caracter not in vocales and caracter != " ":
-            texto_consonantes += caracter
-        else:
-            texto_vocales += caracter
-
+    texto_consonantes = ''.join([x for x in cadena if x not in vocales])
+    texto_vocales = ''.join([x for x in cadena if x in vocales])
     print(f"\nvocales: {texto_vocales}, consonantes: {texto_consonantes}")
 
 def es_palindromo(cadena):
@@ -63,19 +52,24 @@ def menu():
             input("\npresione enter para continuar ")
             continue
         
-        cadena = input("\n Ingrese una cadena de texto: ")
         if opcion == 2:
             contar_consonantes()
             input("\npresione enter para continuar ")
         elif opcion == 3:
+            cadena = input("\nIngrese una cadena de texto: ")
             separar(cadena)
             input("\npresione enter para continuar ")
+
         elif opcion == 4:
+            cadena = input("\nIngrese una cadena de texto: ")
             es_palindromo(cadena)
             input("\npresione enter para continuar ")
+
         elif opcion == 5:
+            cadena = input("\nIngrese una cadena de texto: ")
             cambiar_letra(cadena)
             input("\npresione enter para continuar ")
+
         elif opcion == 6:
             break
         else:

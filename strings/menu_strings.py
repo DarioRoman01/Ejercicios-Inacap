@@ -21,14 +21,8 @@ def es_palindromo(cadena):
     print("es palindromo" if cadena == cadena[::-1] else "no es palindromo")
 
 def cambiar_letra(cadena):
-    nueva = ''
-    for caracter in cadena:
-        if caracter.isupper():
-            nueva += caracter.lower()
-        else:
-            nueva += caracter.capitalize()
-
-    print(f"\n{nueva}")
+    cambiada = ''.join(list(map(lambda x: x.lower() if x.isupper() else x.capitalize(), cadena))) 
+    print(f"\n{cambiada}")
 
 def menu():
     while True:
@@ -47,27 +41,21 @@ def menu():
             continue
 
         if opcion == 1:
-            caracter = input("\nIngrese un caracter: ")
-            es_vocal(caracter)
+            es_vocal(input("\nIngrese un caracter: "))
             input("\npresione enter para continuar ")
-            continue
-        
-        if opcion == 2:
+        elif opcion == 2:
             contar_consonantes()
             input("\npresione enter para continuar ")
         elif opcion == 3:
-            cadena = input("\nIngrese una cadena de texto: ")
-            separar(cadena)
+            separar(input("\nIngrese una cadena de texto: "))
             input("\npresione enter para continuar ")
 
         elif opcion == 4:
-            cadena = input("\nIngrese una cadena de texto: ")
-            es_palindromo(cadena)
+            es_palindromo(input("\nIngrese una cadena de texto: "))
             input("\npresione enter para continuar ")
 
         elif opcion == 5:
-            cadena = input("\nIngrese una cadena de texto: ")
-            cambiar_letra(cadena)
+            cambiar_letra(input("\nIngrese una cadena de texto: "))
             input("\npresione enter para continuar ")
 
         elif opcion == 6:

@@ -8,13 +8,13 @@ def contar_consonantes():
         cadena = input("\nIngrese una cadena de texto: ")
         if cadena == "FIN":
             break
-        consonantes = [x for x in cadena if x not in vocales and x != " "]
+        consonantes = [x for x in cadena.lower() if x not in vocales and x.isalpha()]
         print(f"\nel numero de consonantes es {len(consonantes)}")
 
 def separar(cadena):
     vocales = ["a", "e", "i", "o", "u"]
-    texto_consonantes = ''.join([x for x in cadena if x not in vocales])
-    texto_vocales = ''.join([x for x in cadena if x in vocales])
+    texto_consonantes = ''.join([x for x in cadena.lower() if x not in vocales and x.isalpha()])
+    texto_vocales = ''.join([x for x in cadena.lower() if x in vocales and x.isalpha()])
     print(f"\nvocales: {texto_vocales}, consonantes: {texto_consonantes}")
 
 def es_palindromo(cadena):
@@ -36,12 +36,17 @@ def menu():
 
         try:
             opcion = int(input("\nIngese una opcion: "))
-        except:
-            input("La opcion debe ser un numero presione enter para continuar ")
+            
+        except ValueError:
+            print("\nLa opcion debe ser un numero presione enter para continuar ")
+            continue
+
+        except KeyboardInterrupt:
+            print("\nError: trate de ingresar con mas cuidado")
             continue
 
         if opcion == 1:
-            es_vocal(input("\nIngrese un caracter: "))
+            es_vocal(input("\nIngrese un caracter: ")[0])
             input("\npresione enter para continuar ")
         elif opcion == 2:
             contar_consonantes()
